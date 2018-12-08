@@ -197,13 +197,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: planetSprites.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 2.58
       objectReference: {fileID: 0}
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5350973
+      value: 1.74
       objectReference: {fileID: 0}
     - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
       propertyPath: m_LocalPosition.z
@@ -229,6 +234,48 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: planetSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c7db7fffc8258664cbb153e7caeb7908,
+        type: 3}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: planetSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: aa41f7070bc92d24fa1f9ca42e771355,
+        type: 3}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: planetSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: d2b66d7d88c0a4b4994e8d749948e9d6,
+        type: 3}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: planetSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 84f2434dbd71bb443a8a11fb2acda97a,
+        type: 3}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: planetSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: f8ce5a851057b79439449c28bbca152e,
+        type: 3}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: planetSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c56bc2c74f11404caadccf582b23588,
+        type: 3}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: revoltBubblePrefab
+      value: 
+      objectReference: {fileID: 1130211544091938, guid: 68dcdf9080f361c45ac403d2a4c03395,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
   m_IsPrefabAsset: 0
