@@ -27,6 +27,7 @@ public class EventController : MonoBehaviour {
     float revolutionProbability;
 
 
+
     // Use this for initialization
 	void Start ()
     {
@@ -44,7 +45,8 @@ public class EventController : MonoBehaviour {
         }
         else
         {
-
+            ;
+            ;
         }
     }
 
