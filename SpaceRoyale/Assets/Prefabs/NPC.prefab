@@ -128,6 +128,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 84f2434dbd71bb443a8a11fb2acda97a, type: 3}
   - {fileID: 21300000, guid: f8ce5a851057b79439449c28bbca152e, type: 3}
   - {fileID: 21300000, guid: 2c56bc2c74f11404caadccf582b23588, type: 3}
+  - {fileID: 21300000, guid: 13a6d4903d1c91f4d86c5c2d1f5003cc, type: 3}
+  - {fileID: 21300000, guid: 6f22a94995c410c49a88c50fc171888e, type: 3}
+  - {fileID: 21300000, guid: 6654945fd2a53dc42baca49ede750b92, type: 3}
+  - {fileID: 21300000, guid: 2406ee0c21e3dfc4dadf5da9382f74d0, type: 3}
+  - {fileID: 21300000, guid: 5f9dde82e5b689d42b0153787ede2617, type: 3}
+  - {fileID: 21300000, guid: f4dc705b3521daf4087be1f26857f39b, type: 3}
+  - {fileID: 21300000, guid: 54b776934d090bf478c37d176108d669, type: 3}
+  - {fileID: 21300000, guid: 68690be40e6eb6142bcca679f2313ac8, type: 3}
   revoltBubblePrefab: {fileID: 1130211544091938, guid: 68dcdf9080f361c45ac403d2a4c03395,
     type: 2}
   festivalBubblePrefab: {fileID: 1908238304118880, guid: 2142383eb753e3041a7c0263d12074e5,
