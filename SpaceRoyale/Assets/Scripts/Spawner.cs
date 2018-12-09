@@ -4,14 +4,14 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public int NumberOfNpcs;
+    public int MinimumDistance;
+    public int VerticalOffset;
+    public int HorizontalOffset;
     public GameObject[] ListOfNpcs;
     public GameObject Enemy;
     public GameObject TradeShip;
     public List<Vector3> SpawnedNpcsVectors;
-    public int MinimumDistance;
-    public int VerticalOffset;
-    public int HorizontalOffset;
-    public SpriteRenderer sr;
+    public ReputationManager rp;
 
     void Start()
     {
@@ -21,10 +21,16 @@ public class Spawner : MonoBehaviour
 
         SpawnEnemy();
         SpawnTradeShips();
+
     }
 
     private void Update()
     {
+        if(rp.reputation >= rp.maxReputation)
+        {
+            SpawnNpcs(1);
+            rp.maxReputation = (int)(rp.maxReputation * 1.25f);
+        }
     }
 
     public void SpawnNpcs(int number)
