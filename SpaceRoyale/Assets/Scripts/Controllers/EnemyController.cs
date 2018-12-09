@@ -50,4 +50,12 @@ public class EnemyController : MonoBehaviour
         else
             SelectedNpc = AllNpcs[0].transform;
     }
+
+
+    public void DestroyWithFade()
+    {
+
+    }
+
+
 }
