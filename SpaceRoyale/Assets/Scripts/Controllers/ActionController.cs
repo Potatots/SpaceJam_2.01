@@ -32,12 +32,13 @@ public class ActionController : MonoBehaviour
 
     public float FireRate;
     private float nextFire;
+    private bool IsOkPos = true;
 
     void Start()
     {
         NextActions = new List<eAction>(4);
         for (int i = 0; i < 4; i++)
-            NextActions.Add((eAction)Random.Range(1, 7));
+            NextActions.Add((eAction)6);
 
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -50,7 +51,7 @@ public class ActionController : MonoBehaviour
         }
         else if ((NextActions[0] != eAction.StopMove && NextActions[0] != eAction.StartMove) && Input.GetKeyDown(KeyCode.Space))
         {
-            if(Time.time > nextFire)
+            if (Time.time > nextFire)
             {
                 nextFire = Time.time + FireRate;
                 Action();
@@ -60,7 +61,6 @@ public class ActionController : MonoBehaviour
 
     void Action()
     {
-        soundHandler.Engine();
         if (NextActions[0] == eAction.Shoot)
         {
             Instantiate(Rocket, transform.position, Radar.rotation);
@@ -93,8 +93,11 @@ public class ActionController : MonoBehaviour
         }
         else if (NextActions[0] == eAction.StopMove)
         {
-            StopMove();
-            MoveActions();
+            if (IsOkPos)
+            {
+                StopMove();
+                MoveActions();
+            }
         }
         else if (NextActions[0] == eAction.Nuke)
         {
@@ -128,5 +131,30 @@ public class ActionController : MonoBehaviour
             NextActions.Add((eAction)1);
         else
             NextActions.Add((eAction)Random.Range(1, 7));
+    }
+    private bool IsCorrectPosition()
+    {
+        List<GameObject> AllNpcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Npc"));
+
+        foreach (GameObject npc in AllNpcs)
+        {
+            Debug.Log(Vector3.Distance(npc.transform.position, transform.position));
+            if (Vector3.Distance(npc.transform.position, transform.position) < 490.008)
+                return false;
+        }
+        return true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Dupa wejście");
+
+        if (collision.otherCollider.tag == "Npc")
+            IsOkPos = false;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("Dupa wyjście");
+        IsOkPos = true;
     }
 }
