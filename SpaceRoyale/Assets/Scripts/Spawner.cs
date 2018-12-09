@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class Spawner : MonoBehaviour
         {
             SpawnNpcs(1);
             rp.maxReputation = (int)(rp.maxReputation * 1.25f);
+        }
+        else if(rp.reputation <=0)
+        {
+            SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
     }
 
