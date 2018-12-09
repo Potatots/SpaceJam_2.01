@@ -218,7 +218,7 @@ MonoBehaviour:
   Speed: 35
   ChanceForEnemy: 2
   ChanceForTradeShip: 2
-  FireRate: 0.2
+  FireRate: 0.1
 --- !u!212 &212343388088329620
 SpriteRenderer:
   m_ObjectHideFlags: 1
