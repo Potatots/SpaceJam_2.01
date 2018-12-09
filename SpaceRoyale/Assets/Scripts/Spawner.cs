@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
         if(rp.reputation >= rp.maxReputation)
         {
             SpawnNpcs(1);
-            rp.maxReputation = (int)(rp.maxReputation * 1.25f);
+            rp.maxReputation = (int)(rp.maxReputation * 1.15f);
             SpawnTradeShips();
             SpawnEnemy();
         }
@@ -39,16 +39,6 @@ public class Spawner : MonoBehaviour
         {
             SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
-    }
-    private void FixedUpdate()
-    {
-        int enemyNumber = Random.Range(0, 10000);
-        int tradeNumber = Random.Range(0, 10000);
-
-        if (enemyNumber < ChanceForEnemy)
-            SpawnEnemy();
-        if (tradeNumber < ChanceForTradeShip)
-            SpawnTradeShips();
     }
 
     public void SpawnNpcs(int number)

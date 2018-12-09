@@ -214,10 +214,10 @@ MonoBehaviour:
   Rainbow: {fileID: 4572502821511000, guid: 7936f1fecc3e0fd4689166e45945c1f7, type: 2}
   Radar: {fileID: 4148360446698006}
   Nuke: {fileID: 4777425870816976, guid: 0f374ee295d9d8a48b9a815a80e32457, type: 2}
-  Spawner: {fileID: 114221223849848130, guid: c3d81105c51344e49928f4e35a9f9c45, type: 2}
+  Spawner: {fileID: 0}
   Speed: 35
-  ChanceForEnemy: 5
-  ChanceForTradeShip: 5
+  ChanceForEnemy: 2
+  ChanceForTradeShip: 2
   FireRate: 0.2
 --- !u!212 &212343388088329620
 SpriteRenderer:

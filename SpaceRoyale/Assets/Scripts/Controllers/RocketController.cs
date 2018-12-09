@@ -11,7 +11,6 @@ public class RocketController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Speed = 20;
 	}
 	
 	// Update is called once per frame
