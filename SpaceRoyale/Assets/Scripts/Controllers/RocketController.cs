@@ -17,7 +17,7 @@ public class RocketController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.Translate(Vector3.up * Time.deltaTime * Speed);
-        if (transform.position.x < minX)// || transform.position.x > maxX)// || transform.position.y < minY || transform.position.y > maxY)
+        if (transform.position.x < minX || transform.position.x > maxX || transform.position.y < minY || transform.position.y > maxY)
         {
             Debug.Log(transform.position.x);
             Destroy(gameObject);
