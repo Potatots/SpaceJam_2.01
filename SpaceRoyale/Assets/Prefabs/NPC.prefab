@@ -141,14 +141,14 @@ MonoBehaviour:
   festivalBubblePrefab: {fileID: 1908238304118880, guid: 2142383eb753e3041a7c0263d12074e5,
     type: 2}
   indicatorSprite: {fileID: 212431414513007558}
-  maximumSatisfaction: 500
+  maximumSatisfaction: 100
   revolutionSatisfaction: 0
-  minimumSatisfaction: -500
+  minimumSatisfaction: -100
   delayFrames: 10
   maxIndicatorSize: 2
   festivalColor: {r: 0.19339621, g: 1, b: 0.67448646, a: 1}
   revolutionColor: {r: 1, g: 0.599891, b: 0, a: 1}
-  satisfaction: 100
+  satisfaction: 50
   eventType: 0
 --- !u!198 &198490351356910782
 ParticleSystem:
