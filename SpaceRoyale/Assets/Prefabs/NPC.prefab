@@ -101,11 +101,11 @@ MonoBehaviour:
   rocketPrefab: {fileID: 0}
   revoltBubblePrefab: {fileID: 1130211544091938, guid: 68dcdf9080f361c45ac403d2a4c03395,
     type: 2}
-  maximumSatifaction: 0
-  minimumSatisfaction: 0
+  maximumSatifaction: 1000
   revolutionSatisfaction: 0
+  minimumSatisfaction: -1000
   delayFrames: 10
-  satisfaction: 0
+  satisfaction: 50
   eventType: 0
 --- !u!198 &198490351356910782
 ParticleSystem:
