@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
                 counter++;
                 newVector = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(HorizontalOffset, Screen.width - HorizontalOffset), Random.Range(VerticalOffset, Screen.height - VerticalOffset), Camera.main.farClipPlane / 2));
 
-                if (counter % 5 == 0 && MinimumDistance > 0)
+                if (counter % 10 == 0 && MinimumDistance > 0)
                     MinimumDistance--;
 
             } while (!IsFarEnough(newVector));

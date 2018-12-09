@@ -11,6 +11,7 @@ TagManager:
   - Rocket_Rainbow
   - UI
   - Npc
+  - Enemy
   layers:
   - Default
   - TransparentFX
