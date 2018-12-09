@@ -76,7 +76,7 @@ public class EventController : MonoBehaviour {
 	void Update ()
     {
         if ((Time.frameCount + randomFrame) % delayFrames == 0)
-            satisfaction -= Mathf.Max(Random.Range(0, 2), minimumSatisfaction);
+            satisfaction -= Mathf.Max(Random.Range(0, 3), minimumSatisfaction);
 
         UpdateIndicator();
 
