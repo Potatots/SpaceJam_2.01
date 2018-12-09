@@ -376,6 +376,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 50083943110172330, guid: 50ea5c00f7667d04ba036744bef94533,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ea5c00f7667d04ba036744bef94533, type: 2}
   m_IsPrefabAsset: 0
@@ -554,6 +559,26 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de35ab55baef90146bc8f3f25cc09ecc, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1274534941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1202360994457744, guid: 50ea5c00f7667d04ba036744bef94533,
+    type: 2}
+  m_PrefabInternal: {fileID: 798032649}
+--- !u!58 &1274534942
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1274534941}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.09469271}
+  serializedVersion: 2
+  m_Radius: 2.6542802
 --- !u!1001 &1695891752
 Prefab:
   m_ObjectHideFlags: 0

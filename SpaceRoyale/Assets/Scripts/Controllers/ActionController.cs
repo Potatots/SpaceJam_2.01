@@ -145,14 +145,14 @@ public class ActionController : MonoBehaviour
         return true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Dupa wejście");
 
-        if (collision.otherCollider.tag == "Npc")
+        if (collision.tag == "Npc")
             IsOkPos = false;
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("Dupa wyjście");
         IsOkPos = true;
