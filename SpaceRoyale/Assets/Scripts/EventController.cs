@@ -11,30 +11,26 @@ public class EventController : MonoBehaviour {
         Festival
     };
 
-
-
+    [Header("Prefabs to link")]
     public Sprite[] planetSprites;
-
     public GameObject rocketPrefab;
     public GameObject revoltBubblePrefab;
 
+    [Header("Events settings")]
+    public int maximumSatifaction;
+    public int minimumSatisfaction;
+    public int revolutionSatisfaction;
+
+    [Header("Debug preview")]
+    public int satisfaction;
     [SerializeField]
     EventType eventType;
 
-    [SerializeField]
-    int delayFrames;
-    int randomFrame;
-
-    [SerializeField]
-    [Range(0,1)]
-    float revolutionProbability;
-
-
-
     // Use this for initialization
-	void Start ()
+    void Start ()
     {
-        randomFrame = Random.Range(-20, 20);
+        satisfaction = Random.Range(revolutionSatisfaction, maximumSatifaction);
+
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = planetSprites[Random.Range(0, planetSprites.Length)];
         StartRevolution();
@@ -43,37 +39,63 @@ public class EventController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(eventType == EventType.None)
+        satisfaction -= Random.Range(0, 2);
+        if(eventType == EventType.Revolution)
         {
-            UpdateNone();
+            UpdateRevolution();
+        }
+        else if(eventType == EventType.Festival)
+        {
+            UpdateFestival();
         }
         else
         {
-            ;
-            ;
+            UpdateNone();
         }
+    }
+
+    private void UpdateRevolution()
+    {
+        ;
+    }
+
+    private void UpdateFestival()
+    {
+        ;
     }
 
     void UpdateNone()
     {
+
+        if(satisfaction < revolutionSatisfaction)
+        {
+            StartRevolution();
+        }
+
+        /*
         if ((Time.frameCount + randomFrame) % delayFrames == 0)
         {
             float ran = Random.Range(0f, 1f);
             if (ran < revolutionProbability)
             {
-                StartRevolution();
+               
             }
         }
+        */
     }
 
 
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if(collision.otherCollider.CompareTag("Rocket"))
+        if(true)
         {
-            StopEvents();
+            if (eventType == EventType.Revolution)
+            {
+
+            }
         }
+
     }
 
     void StartRevolution()
