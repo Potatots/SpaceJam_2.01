@@ -149,6 +149,7 @@ public class EventController : MonoBehaviour {
     {
         if(other.CompareTag("Rocket"))
         {
+            soundHandler.Explode();
             satisfaction = Random.Range( (maximumSatisfaction - revolutionSatisfaction) / 3, (maximumSatisfaction - revolutionSatisfaction) / 2) ;
             //Debug.Log("Zderzenie z rakietą");
             /*
@@ -187,6 +188,7 @@ public class EventController : MonoBehaviour {
 
     void StartRevolution()
     {
+        soundHandler.Crowd();
         eventType = EventType.Revolution;
         ParticleSystem ps = GetComponent<ParticleSystem>();
         ps.enableEmission = true;
@@ -198,6 +200,7 @@ public class EventController : MonoBehaviour {
 
     void StartFestival()
     {
+        soundHandler.Crowd();
         eventType = EventType.Festival;
         ParticleSystem ps = GetComponent<ParticleSystem>();
         ps.enableEmission = true;

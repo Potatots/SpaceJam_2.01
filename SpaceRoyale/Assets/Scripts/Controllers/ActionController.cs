@@ -60,6 +60,7 @@ public class ActionController : MonoBehaviour
 
     void Action()
     {
+        soundHandler.Engine();
         if (NextActions[0] == eAction.Shoot)
         {
             Instantiate(Rocket, transform.position, Radar.rotation);

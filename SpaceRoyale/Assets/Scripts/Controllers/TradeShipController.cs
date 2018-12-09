@@ -41,8 +41,9 @@ public class TradeShipController : MonoBehaviour
 
     private IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
+        
         yield return new WaitForSeconds(WaitTime);
-
+        soundHandler.Engine();
         Transform newNpc;
 
         do

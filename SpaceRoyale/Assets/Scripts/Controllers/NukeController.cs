@@ -15,6 +15,7 @@ public class NukeController : MonoBehaviour
 
         if (transform.position.x == 0 && transform.position.y == 0 && !WasEnabled)
         {
+            soundHandler.Explode();
             GetComponentInChildren<ParticleSystem>().Play();
 
             List<GameObject> AllShips = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
