@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 198612609556097562}
   - component: {fileID: 199475445404135352}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: nuklear_boom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
