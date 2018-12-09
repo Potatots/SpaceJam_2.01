@@ -228,7 +228,7 @@ MonoBehaviour:
   ListOfObjects:
   - {fileID: 1103666527321902, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
   SpawnedVectors: []
-  MinimumDistance: 12
+  MinimumDistance: 10
   VerticalOffset: 100
   HorizontalOffset: 300
 --- !u!20 &519420031

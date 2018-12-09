@@ -69,6 +69,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0
+  minX: -55
+  maxX: 55
+  minY: -34
+  maxY: 34
 --- !u!212 &212087062221110812
 SpriteRenderer:
   m_ObjectHideFlags: 1
