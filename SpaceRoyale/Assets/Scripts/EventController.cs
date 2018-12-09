@@ -60,8 +60,8 @@ public class EventController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if((Time.frameCount + randomFrame) % delayFrames == 0)
-            satisfaction -= Random.Range(0, 2);
+        if ((Time.frameCount + randomFrame) % delayFrames == 0)
+            satisfaction -= Mathf.Max(Random.Range(0, 2), minimumSatisfaction);
 
         UpdateIndicator();
 
@@ -120,14 +120,39 @@ public class EventController : MonoBehaviour {
 
 
  
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(true)
+        if(other.CompareTag("Rocket"))
         {
-            if (eventType == EventType.Revolution)
+            //Debug.Log("Zderzenie z rakietą");
+            if(eventType == EventType.Revolution)
             {
-
+                satisfaction += (maximumSatisfaction - revolutionSatisfaction) / 2;
             }
+            else
+            {
+                satisfaction -= (maximumSatisfaction - revolutionSatisfaction) / 3;
+            }
+        }
+        else if (other.CompareTag("Rocket_Cash"))
+        {
+            //Debug.Log("Zderzenie z pieniedzmi");
+            satisfaction += ConfigurationScript.moneySatisfactionValue;
+        }
+        else if (other.CompareTag("Rocket_Heart"))
+        {
+            //Debug.Log("Zderzenie z serduszkiem");
+            satisfaction += ConfigurationScript.heartSatisfactionValue;
+        }
+        else if (other.CompareTag("Rocket_Peace"))
+        {
+            //Debug.Log("Zderzenie z pacyfką");
+            satisfaction += ConfigurationScript.peaceSatisfactionValue;
+        }
+        else if(other.CompareTag("Rocket_Rainbow"))
+        {
+            //Debug.Log("Zderzenie z tęczą");
+            satisfaction += ConfigurationScript.rainbowSatisfactionValue;
         }
 
     }
