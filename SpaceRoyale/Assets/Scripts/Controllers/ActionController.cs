@@ -10,7 +10,8 @@ public enum eAction
     Heart,
     Rainbow,
     StartMove,
-    StopMove
+    StopMove,
+    Nuke
 }
 
 public class ActionController : MonoBehaviour
@@ -23,6 +24,7 @@ public class ActionController : MonoBehaviour
     public Transform Heart;
     public Transform Rainbow;
     public Transform Radar;
+    public Transform Nuke;
 
     private Rigidbody2D _rigidbody;
 
@@ -35,7 +37,8 @@ public class ActionController : MonoBehaviour
     {
         NextActions = new List<eAction>(4);
         for (int i = 0; i < 4; i++)
-            NextActions.Add((eAction)Random.Range(1, 7));
+            NextActions.Add((eAction)8);
+            //NextActions.Add((eAction)Random.Range(1, 7));
 
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -93,6 +96,11 @@ public class ActionController : MonoBehaviour
             StopMove();
             MoveActions();
         }
+        else if (NextActions[0] == eAction.Nuke)
+        {
+            Instantiate(Nuke, transform.position, Quaternion.FromToRotation(transform.position, Vector3.zero));
+            MoveActions();
+        }
         else if (NextActions[0] == eAction.Empty)
         {
             Debug.Log("Coś kurwa poszło nie tak, eAction.Empty");
@@ -112,9 +120,13 @@ public class ActionController : MonoBehaviour
     {
         NextActions.RemoveAt(0);
 
-        if (Random.Range(0, 100) < 15)
-            NextActions.Add((eAction)1);
-        else
-            NextActions.Add((eAction)Random.Range(1, 7));
+        int rndVal = Random.Range(0, 100);
+
+        if (rndVal < 200)
+            NextActions.Add((eAction)8);
+        //if (rndVal < 15)
+        //    NextActions.Add((eAction)1);
+        //else
+        //    NextActions.Add((eAction)Random.Range(1, 7));
     }
 }
