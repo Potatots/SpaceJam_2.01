@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class ConfigurationScript : ScriptableObject
 {
-    public static int moneySatisfactionValue = 120;
-    public static int heartSatisfactionValue = 150;
-    public static int peaceSatisfactionValue = 200;
-    public static int rainbowSatisfactionValue = 300;
+    public static int moneySatisfactionValue = 180;
+    public static int heartSatisfactionValue = 210;
+    public static int peaceSatisfactionValue = 260;
+    public static int rainbowSatisfactionValue = 360;
 }
