@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rocket
+  - Rocket_Cash
+  - Rocket_Heart
+  - Rocket_Peace
+  - Rocket_Rainbow
   layers:
   - Default
   - TransparentFX
