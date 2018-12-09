@@ -744,7 +744,8 @@ MonoBehaviour:
   revolutionCount: 0
   festivalCount: 0
   reputation: 500
-  maxReputation: 1000000
+  maxReputation: 1000
+  initialReputation: 500
 --- !u!114 &114992887811975308
 MonoBehaviour:
   m_ObjectHideFlags: 1

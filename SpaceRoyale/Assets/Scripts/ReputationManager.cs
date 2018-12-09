@@ -19,6 +19,7 @@ public class ReputationManager : MonoBehaviour
 
     [Header("Reputation settings")]
     public int maxReputation;
+    public int initialReputation;
 
 
 
@@ -27,7 +28,7 @@ public class ReputationManager : MonoBehaviour
     {
         revolutionCount = 0;
         festivalCount = 0;
-        reputation = 5000;
+        reputation = initialReputation;
     }
     void Start ()
     {
@@ -37,6 +38,6 @@ public class ReputationManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        reputationBar.fillAmount = reputation / maxReputation;
+        reputationBar.fillAmount = (float)reputation / (float)maxReputation;
 	}
 }
