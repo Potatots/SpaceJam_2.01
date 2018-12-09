@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -224,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df0d9f9a9b4540860d7b58b5a7a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfObjects: 5
+  NumberOfObjects: 10
   ListOfObjects:
   - {fileID: 1103666527321902, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
   SpawnedVectors: []
@@ -253,7 +254,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 138
   orthographic: 1
   orthographic size: 30
   m_Depth: -1
@@ -284,6 +285,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585f9a03238266c40a22788e88859968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reputation: 0
+  maxReputation: 0
+  revolutionCount: 0
+  festivalCount: 0
 --- !u!1001 &798032649
 Prefab:
   m_ObjectHideFlags: 0
