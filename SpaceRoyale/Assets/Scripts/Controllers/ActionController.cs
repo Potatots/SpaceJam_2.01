@@ -137,16 +137,27 @@ public class ActionController : MonoBehaviour
 
     private void MoveActions()
     {
+        eAction oldAction = NextActions[3];
         NextActions.RemoveAt(0);
 
         int rndVal = Random.Range(0, 100);
 
         if (rndVal < 2)
             NextActions.Add((eAction)8);
-        if (rndVal < 15)
-            NextActions.Add((eAction)1);
+        //if (rndVal < 10)
+            //NextActions.Add((eAction)1);
         else
-            NextActions.Add((eAction)Random.Range(1, 7));
+        {
+            eAction newAction;
+
+            do
+            {
+                newAction = (eAction)Random.Range(1, 7);
+
+            } while (oldAction == newAction);
+
+            NextActions.Add(newAction);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

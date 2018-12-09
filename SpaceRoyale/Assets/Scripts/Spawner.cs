@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
         if(rp.reputation >= rp.maxReputation)
         {
             SpawnNpcs(1);
-            rp.maxReputation = (int)(rp.maxReputation * 1.15f);
+            rp.maxReputation = (int)(rp.maxReputation * 1.1f);
             SpawnTradeShips();
             SpawnEnemy();
         }
