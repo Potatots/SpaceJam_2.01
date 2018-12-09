@@ -55,8 +55,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103666527321902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -61.43155, y: -12.303049, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 7.955164, y: -15.204757, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 2}
   m_Children:
   - {fileID: 4743415913682272}
   m_Father: {fileID: 0}
@@ -107,9 +107,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010092735, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.3045797
+  m_Radius: 1.14
 --- !u!114 &114021694705003760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +146,8 @@ MonoBehaviour:
   revolutionSatisfaction: 0
   minimumSatisfaction: -100
   delayFrames: 10
+  maxScale: 2
+  minScale: 0.9
   maxIndicatorSize: 2
   festivalColor: {r: 0.19339621, g: 1, b: 0.67448646, a: 1}
   revolutionColor: {r: 1, g: 0.599891, b: 0, a: 1}

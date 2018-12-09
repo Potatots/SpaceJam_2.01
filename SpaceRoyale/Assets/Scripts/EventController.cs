@@ -25,6 +25,10 @@ public class EventController : MonoBehaviour {
     public int minimumSatisfaction;
     public int delayFrames;
 
+    [Header("Size settings")]
+    public float minScale;
+    public float maxScale;
+
     [Header("Indicator settings")]
     public float maxIndicatorSize;
 
@@ -45,9 +49,7 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        Debug.Log("Planeta powstaje");
 
-  
 
         // reputation manager init
         reputationManager = GameObject.FindGameObjectWithTag("UI").GetComponent<ReputationManager>();
