@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df0d9f9a9b4540860d7b58b5a7a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfObjects: 3
+  NumberOfObjects: 5
   ListOfObjects:
   - {fileID: 1103666527321902, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
   SpawnedVectors: []
