@@ -3,25 +3,35 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public int NumberOfObjects;
-    public GameObject[] ListOfObjects;
-    public List<Vector3> SpawnedVectors;
+    public int NumberOfNpcs;
+    public GameObject[] ListOfNpcs;
+    public GameObject Enemy;
+    public GameObject TradeShip;
+    public List<Vector3> SpawnedNpcsVectors;
     public int MinimumDistance;
     public int VerticalOffset;
     public int HorizontalOffset;
+    public SpriteRenderer sr;
 
     void Start()
     {
-        SpawnEnemies();
-        SpawnedVectors = new List<Vector3>();
-        SpawnedVectors.Add(Vector3.zero);
+        SpawnNpcs(NumberOfNpcs);
+        SpawnedNpcsVectors = new List<Vector3>();
+        SpawnedNpcsVectors.Add(Vector3.zero);
+
+        SpawnEnemy();
+        SpawnTradeShips();
     }
 
-    public void SpawnEnemies()
+    private void Update()
     {
-        for(int i=0;i<NumberOfObjects;i++)
+    }
+
+    public void SpawnNpcs(int number)
+    {
+        for (int i = 0; i < number; i++)
         {
-            GameObject obj = ListOfObjects[Random.Range(0, ListOfObjects.Length - 1)];
+            GameObject obj = ListOfNpcs[Random.Range(0, ListOfNpcs.Length - 1)];
             Vector3 newVector = Vector3.zero;
             int counter = 0;
             do
@@ -34,15 +44,28 @@ public class Spawner : MonoBehaviour
 
             } while (!IsFarEnough(newVector));
 
-            SpawnedVectors.Add(newVector);
+            SpawnedNpcsVectors.Add(newVector);
 
             Instantiate(obj, newVector, Quaternion.identity);
         }
     }
 
+    public void SpawnEnemy()
+    {
+        Vector3 newVector = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(-HorizontalOffset, 0), Random.Range(-VerticalOffset, 0), Camera.main.farClipPlane / 2));
+
+        Instantiate(Enemy, newVector, Quaternion.identity);
+    }
+    public void SpawnTradeShips()
+    {
+        Vector3 newVector = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(-HorizontalOffset, 0), Random.Range(-VerticalOffset, 0), Camera.main.farClipPlane / 2));
+
+        Instantiate(TradeShip, newVector, Quaternion.identity);
+    }
+
     private bool IsFarEnough(Vector3 v)
     {
-        foreach(Vector3 vector in SpawnedVectors)
+        foreach (Vector3 vector in SpawnedNpcsVectors)
         {
             if (Vector3.Distance(vector, v) < MinimumDistance)
                 return false;
