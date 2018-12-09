@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 222907187366569410}
   - component: {fileID: 114456254618187200}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Reputation Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f4e54e63807c1cb469aa71291fc89740, type: 3}
-    m_FontSize: 82
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -740,10 +740,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585f9a03238266c40a22788e88859968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reputation: 0
-  maxReputation: 0
+  reputationBar: {fileID: 114456254618187200}
   revolutionCount: 0
   festivalCount: 0
+  reputation: 500
+  maxReputation: 1000000
 --- !u!114 &114992887811975308
 MonoBehaviour:
   m_ObjectHideFlags: 1

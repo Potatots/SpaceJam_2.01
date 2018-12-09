@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59a14ed104b8d242ad49bd1edf7f59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reputationManager: {fileID: 0}
   planetSprites:
   - {fileID: 21300000, guid: c7db7fffc8258664cbb153e7caeb7908, type: 3}
   - {fileID: 21300000, guid: aa41f7070bc92d24fa1f9ca42e771355, type: 3}
@@ -141,7 +142,7 @@ MonoBehaviour:
   festivalBubblePrefab: {fileID: 1908238304118880, guid: 2142383eb753e3041a7c0263d12074e5,
     type: 2}
   indicatorSprite: {fileID: 212431414513007558}
-  maximumSatisfaction: 100
+  maximumSatisfaction: 500
   revolutionSatisfaction: 0
   minimumSatisfaction: -100
   delayFrames: 10

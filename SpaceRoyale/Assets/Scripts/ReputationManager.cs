@@ -37,6 +37,6 @@ public class ReputationManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        
+        reputationBar.fillAmount = reputation / maxReputation;
 	}
 }
