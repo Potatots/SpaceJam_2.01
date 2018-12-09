@@ -1,21 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    GameObject[] AllNpcs;
+    List<GameObject> AllNpcs;
     Transform SelectedNpc;
 
     public float RotationSpeed;
     public float MovementSpeed;
+    public float WaitTime;
 
     // Use this for initialization
     void Start()
     {
-        AllNpcs = GameObject.FindGameObjectsWithTag("Npc");
+        AllNpcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Npc").OrderByDescending(go => go.GetComponent<EventController>().satisfaction));
 
-        SelectedNpc = AllNpcs[Random.Range(0, AllNpcs.Length)].transform;
+        SelectedNpc = AllNpcs[0].transform;
     }
 
     // Update is called once per frame
@@ -37,8 +39,15 @@ public class EnemyController : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, SelectedNpc.position, MovementSpeed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
-        SelectedNpc = AllNpcs[Random.Range(0, AllNpcs.Length)].transform;
+        yield return new WaitForSeconds(WaitTime);
+
+        AllNpcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Npc").OrderByDescending(go => go.GetComponent<EventController>().satisfaction));
+
+        if (SelectedNpc.position == AllNpcs[0].transform.position)
+            SelectedNpc = AllNpcs[1].transform;
+        else
+            SelectedNpc = AllNpcs[0].transform;
     }
 }
