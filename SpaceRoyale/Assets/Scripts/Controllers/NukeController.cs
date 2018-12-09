@@ -18,6 +18,7 @@ public class NukeController : MonoBehaviour
             GetComponentInChildren<ParticleSystem>().Play();
 
             List<GameObject> AllShips = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+            AllShips.AddRange(GameObject.FindGameObjectsWithTag("TradeShip"));
 
             AllShips.ForEach(ship => Destroy(ship,1.15f));
 

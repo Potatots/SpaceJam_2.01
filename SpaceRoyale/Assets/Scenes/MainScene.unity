@@ -113,6 +113,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &156608547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114947935926217012, guid: a1b49bfd640404b45b95fb84e6700075,
+    type: 2}
+  m_PrefabInternal: {fileID: 906911250}
+  m_Script: {fileID: 11500000, guid: 585f9a03238266c40a22788e88859968, type: 3}
 --- !u!1001 &240806138
 Prefab:
   m_ObjectHideFlags: 0
@@ -163,7 +169,7 @@ Prefab:
     - target: {fileID: 224390188943375354, guid: ba3dc39a007bb3542ac2b58e4884b39a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -3.5999756
+      value: -3.5998535
       objectReference: {fileID: 0}
     - target: {fileID: 224390188943375354, guid: ba3dc39a007bb3542ac2b58e4884b39a,
         type: 2}
@@ -225,6 +231,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.41666663
       objectReference: {fileID: 0}
+    - target: {fileID: 1900567399728558, guid: ba3dc39a007bb3542ac2b58e4884b39a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3dc39a007bb3542ac2b58e4884b39a, type: 2}
   m_IsPrefabAsset: 0
@@ -264,15 +274,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df0d9f9a9b4540860d7b58b5a7a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfNpcs: 10
+  NumberOfNpcs: 5
+  MinimumDistance: 10
+  VerticalOffset: 50
+  HorizontalOffset: 200
   ListOfNpcs:
   - {fileID: 1103666527321902, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
   Enemy: {fileID: 1385256053478078, guid: c676ea0ebe7e35643b39f0f150aa4bfe, type: 2}
   TradeShip: {fileID: 1006572109941704, guid: 00ad5878dcaf65a4083a5c4fe3c5d6fa, type: 2}
   SpawnedNpcsVectors: []
-  MinimumDistance: 10
-  VerticalOffset: 50
-  HorizontalOffset: 200
+  rp: {fileID: 156608547}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -489,6 +500,14 @@ Prefab:
         type: 2}
       propertyPath: m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936747069060850, guid: a1b49bfd640404b45b95fb84e6700075, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220405230646914, guid: a1b49bfd640404b45b95fb84e6700075, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1b49bfd640404b45b95fb84e6700075, type: 2}

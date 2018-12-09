@@ -12,6 +12,7 @@ TagManager:
   - UI
   - Npc
   - Enemy
+  - TradeShip
   layers:
   - Default
   - TransparentFX
