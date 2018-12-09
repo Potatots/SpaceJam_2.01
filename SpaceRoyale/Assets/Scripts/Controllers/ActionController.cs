@@ -42,11 +42,11 @@ public class ActionController : MonoBehaviour
 
     void Update()
     {
-        if (NextActions[0] == eAction.StopMove && Input.GetKeyDown(KeyCode.Space))
+        if ((NextActions[0] == eAction.StartMove || NextActions[0] == eAction.StopMove) && Input.GetKeyDown(KeyCode.Space))
         {
             Action();
         }
-        else if (NextActions[0] != eAction.StopMove && Input.GetKeyDown(KeyCode.Space))
+        else if ((NextActions[0] != eAction.StopMove && NextActions[0] != eAction.StartMove) && Input.GetKeyDown(KeyCode.Space))
         {
             if(Time.time > nextFire)
             {
@@ -92,7 +92,6 @@ public class ActionController : MonoBehaviour
         else if (NextActions[0] == eAction.StopMove)
         {
             StopMove();
-            NextActions[0] = eAction.StartMove;
             MoveActions();
         }
         else if (NextActions[0] == eAction.Empty)

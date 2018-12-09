@@ -339,28 +339,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 50083943110172330, guid: 50ea5c00f7667d04ba036744bef94533,
-        type: 2}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088598261500438, guid: 50ea5c00f7667d04ba036744bef94533, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.67559016
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088598261500438, guid: 50ea5c00f7667d04ba036744bef94533, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7372774
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088598261500438, guid: 50ea5c00f7667d04ba036744bef94533, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -85
-      objectReference: {fileID: 0}
-    - target: {fileID: 114536243542120508, guid: 50ea5c00f7667d04ba036744bef94533,
-        type: 2}
-      propertyPath: FireRate
-      value: 49.24
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ea5c00f7667d04ba036744bef94533, type: 2}
   m_IsPrefabAsset: 0
