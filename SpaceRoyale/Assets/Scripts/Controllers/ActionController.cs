@@ -4,6 +4,10 @@ public enum eAction
 {
     Empty,
     Shoot,
+    Money,
+    Peace,
+    Heart,
+    Rainbow,
     StartMove,
     StopMove
 }
@@ -14,6 +18,10 @@ public class ActionController : MonoBehaviour
     public eAction NextAction { get; set; }
 
     public Transform Rocket;
+    public Transform Money;
+    public Transform Peace;
+    public Transform Heart;
+    public Transform Rainbow;
     public Transform Radar;
 
     private Rigidbody2D _rigidbody;
@@ -22,10 +30,9 @@ public class ActionController : MonoBehaviour
 
     void Start()
     {
-        CurrentAction = (eAction)Random.Range(1, 3);
-        NextAction = (eAction)Random.Range(1, 3);
+        CurrentAction = (eAction)Random.Range(1, 7);
+        NextAction = (eAction)Random.Range(1, 7);
         _rigidbody = GetComponent<Rigidbody2D>();
-        Speed = 10;
     }
 
     void Update()
@@ -42,7 +49,31 @@ public class ActionController : MonoBehaviour
         {
             Instantiate(Rocket, transform.position, Radar.rotation);
             CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 3);
+            NextAction = (eAction)Random.Range(1, 7);
+        }
+        else if(CurrentAction == eAction.Heart)
+        {
+            Instantiate(Heart, transform.position, Radar.rotation);
+            CurrentAction = NextAction;
+            NextAction = (eAction)Random.Range(1, 7);
+        }
+        else if(CurrentAction == eAction.Money)
+        {
+            Instantiate(Money, transform.position, Radar.rotation);
+            CurrentAction = NextAction;
+            NextAction = (eAction)Random.Range(1, 7);
+        }
+        else if(CurrentAction == eAction.Peace)
+        {
+            Instantiate(Peace, transform.position, Radar.rotation);
+            CurrentAction = NextAction;
+            NextAction = (eAction)Random.Range(1, 7);
+        }
+        else if(CurrentAction == eAction.Rainbow)
+        {
+            Instantiate(Rainbow, transform.position, Radar.rotation);
+            CurrentAction = NextAction;
+            NextAction = (eAction)Random.Range(1, 7);
         }
         else if(CurrentAction == eAction.StartMove)
         {
@@ -55,7 +86,7 @@ public class ActionController : MonoBehaviour
             CurrentAction = eAction.StartMove;
 
             CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 3);
+            NextAction = (eAction)Random.Range(1, 7);
         }
         else if(CurrentAction == eAction.Empty)
         {

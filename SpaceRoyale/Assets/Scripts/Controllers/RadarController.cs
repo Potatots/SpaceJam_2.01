@@ -2,7 +2,7 @@
 
 public class RadarController : MonoBehaviour
 {
-    public float Speed { get; set; }
+    public float Speed;
 
     public float Angle
     {
@@ -20,7 +20,6 @@ public class RadarController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Speed = 1;
     }
 
     // Update is called once per frame
