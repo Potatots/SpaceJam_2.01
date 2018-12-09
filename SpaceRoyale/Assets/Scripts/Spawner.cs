@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public int NumberOfNpcs;
     public int MinimumDistance;
+    int PermaDist;
     public int VerticalOffset;
     public int HorizontalOffset;
     public GameObject[] ListOfNpcs;
@@ -16,6 +17,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        PermaDist = MinimumDistance;
         SpawnNpcs(NumberOfNpcs);
         SpawnedNpcsVectors = new List<Vector3>();
         SpawnedNpcsVectors.Add(Vector3.zero);
@@ -58,6 +60,8 @@ public class Spawner : MonoBehaviour
             SpawnedNpcsVectors.Add(newVector);
 
             Instantiate(obj, newVector, Quaternion.identity);
+            MinimumDistance = PermaDist;
+
         }
     }
 
