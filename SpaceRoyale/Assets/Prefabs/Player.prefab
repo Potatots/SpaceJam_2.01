@@ -182,7 +182,7 @@ MonoBehaviour:
   Rainbow: {fileID: 4572502821511000, guid: 7936f1fecc3e0fd4689166e45945c1f7, type: 2}
   Radar: {fileID: 4148360446698006}
   Speed: 20
-  FireRate: 1
+  FireRate: 0.2
 --- !u!212 &212343388088329620
 SpriteRenderer:
   m_ObjectHideFlags: 1
