@@ -8,12 +8,14 @@ public class ReputationManager : MonoBehaviour
     [Header("UI objects to link")]
     public Image reputationBar;
 
+    public Text revolutionsIndicator;
+    public Text festivalsIndicator;
 
-
+    /*
     [Header("Events counts")]
     public int revolutionCount;
     public int festivalCount;
-
+    */
     [Header("Reputation")]
     public int reputation;
 
@@ -28,8 +30,8 @@ public class ReputationManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        revolutionCount = 0;
-        festivalCount = 0;
+        //revolutionCount = 0;
+        //festivalCount = 0;
         reputation = initialReputation;
     }
     void Start()
@@ -51,12 +53,21 @@ public class ReputationManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        int revolutionsAmount = 0;
+        int festivalsAmount = 0;
         reputation = 0;
         foreach(EventController controller in planetControllers)
         {
             reputation += controller.satisfaction;
+
+            if (controller.eventType == EventController.EventType.Revolution)
+                revolutionsAmount += 1;
+            if (controller.eventType == EventController.EventType.Festival)
+                festivalsAmount += 1;
         }
 
         reputationBar.fillAmount = (float)reputation / (float)maxReputation;
+        festivalsIndicator.text = festivalsAmount.ToString();
+        revolutionsIndicator.text = revolutionsAmount.ToString();
 	}
 }

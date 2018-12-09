@@ -38,8 +38,7 @@ public class EventController : MonoBehaviour {
 
     [Header("Debug preview")]
     public int satisfaction;
-    [SerializeField]
-    EventType eventType;
+    public EventType eventType;
  
 
     private int randomFrame;
