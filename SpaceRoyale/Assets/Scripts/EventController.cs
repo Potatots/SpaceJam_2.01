@@ -184,6 +184,10 @@ public class EventController : MonoBehaviour {
             satisfaction += ConfigurationScript.rainbowSatisfactionValue;
         }
 
+        else if(other.CompareTag("Enemy"))
+        {
+            satisfaction /= 2;
+        }
     }
 
     void StartRevolution()
