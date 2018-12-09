@@ -122,11 +122,11 @@ public class ActionController : MonoBehaviour
 
         int rndVal = Random.Range(0, 100);
 
-        if (rndVal < 200)
+        if (rndVal < 2)
             NextActions.Add((eAction)8);
-        //if (rndVal < 15)
-        //    NextActions.Add((eAction)1);
-        //else
-        //    NextActions.Add((eAction)Random.Range(1, 7));
+        if (rndVal < 15)
+            NextActions.Add((eAction)1);
+        else
+            NextActions.Add((eAction)Random.Range(1, 7));
     }
 }

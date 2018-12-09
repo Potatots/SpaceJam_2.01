@@ -23,7 +23,7 @@ public class NukeController : MonoBehaviour
 
             WasEnabled = true;
 
-            Destroy(gameObject,5);
+            Destroy(gameObject,1.5);
         }
     }
 
