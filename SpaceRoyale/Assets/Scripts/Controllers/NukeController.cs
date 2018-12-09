@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class NukeController : MonoBehaviour
 {
-    public ParticleSystem ps;
-
     public int MovementSpeed;
     bool WasEnabled = false;
     void Start()
@@ -17,17 +15,15 @@ public class NukeController : MonoBehaviour
 
         if (transform.position.x == 0 && transform.position.y == 0 && !WasEnabled)
         {
-            Debug.Log("Dupa");
-
-            ps = GetComponentInChildren<ParticleSystem>();
-            ps.enableEmission = true;
+            GetComponentInChildren<ParticleSystem>().Play();
 
             List<GameObject> AllShips = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
-            AllShips.ForEach(ship => Destroy(ship));
+
+            AllShips.ForEach(ship => Destroy(ship,1.15f));
 
             WasEnabled = true;
 
-            //Destroy(gameObject,5);
+            Destroy(gameObject,5);
         }
     }
 
