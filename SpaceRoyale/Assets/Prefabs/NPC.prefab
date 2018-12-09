@@ -145,7 +145,7 @@ MonoBehaviour:
   maximumSatisfaction: 500
   revolutionSatisfaction: 0
   minimumSatisfaction: -100
-  delayFrames: 10
+  delayFrames: 9
   minScale: 1.5
   maxScale: 3.5
   maxIndicatorSize: 2
