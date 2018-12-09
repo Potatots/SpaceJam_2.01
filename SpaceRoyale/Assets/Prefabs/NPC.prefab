@@ -101,6 +101,8 @@ MonoBehaviour:
   rocketPrefab: {fileID: 0}
   revoltBubblePrefab: {fileID: 1130211544091938, guid: 68dcdf9080f361c45ac403d2a4c03395,
     type: 2}
+  festivalBubblePrefab: {fileID: 1908238304118880, guid: 2142383eb753e3041a7c0263d12074e5,
+    type: 2}
   maximumSatifaction: 1000
   revolutionSatisfaction: 0
   minimumSatisfaction: -1000
