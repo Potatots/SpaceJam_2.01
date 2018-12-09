@@ -75,21 +75,28 @@ public class EventController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if ((Time.frameCount + randomFrame) % delayFrames == 0)
-            satisfaction -= Mathf.Max(Random.Range(0, 3), minimumSatisfaction);
 
         UpdateIndicator();
 
         if(eventType == EventType.Revolution)
         {
+            if ((Time.frameCount + randomFrame) % delayFrames == 0)
+                satisfaction -= Mathf.Max(Random.Range(0, 2), minimumSatisfaction);
+
             UpdateRevolution();
         }
         else if(eventType == EventType.Festival)
         {
+            if ((Time.frameCount + randomFrame) % delayFrames == 0)
+                satisfaction -= Mathf.Max(Random.Range(0, 2), minimumSatisfaction);
+
             UpdateFestival();
         }
         else
         {
+            if ((Time.frameCount + randomFrame) % delayFrames == 0)
+                satisfaction -= Mathf.Max(Random.Range(0, 3), minimumSatisfaction);
+
             UpdateNone();
         }
 
