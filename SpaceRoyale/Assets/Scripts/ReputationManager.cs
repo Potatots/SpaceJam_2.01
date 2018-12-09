@@ -69,5 +69,6 @@ public class ReputationManager : MonoBehaviour
         reputationBar.fillAmount = (float)reputation / (float)maxReputation;
         festivalsIndicator.text = festivalsAmount.ToString();
         revolutionsIndicator.text = revolutionsAmount.ToString();
+        ;
 	}
 }
