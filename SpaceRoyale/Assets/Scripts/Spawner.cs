@@ -8,7 +8,8 @@ public class Spawner : MonoBehaviour
     public GameObject[] ListOfObjects;
     public List<Vector3> SpawnedVectors;
     public int MinimumDistance;
-    public int ScreenOffset;
+    public int VerticalOffset;
+    public int HorizontalOffset;
 
     void Start()
     {
@@ -25,7 +26,7 @@ public class Spawner : MonoBehaviour
             Vector3 newVector = Vector3.zero;
             do
             {
-                newVector = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(ScreenOffset, Screen.width - ScreenOffset), Random.Range(ScreenOffset, Screen.height - ScreenOffset), Camera.main.farClipPlane / 2));
+                newVector = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(HorizontalOffset, Screen.width - HorizontalOffset), Random.Range(VerticalOffset, Screen.height - VerticalOffset), Camera.main.farClipPlane / 2));
             } while (!IsFarEnough(newVector));
 
             SpawnedVectors.Add(newVector);
