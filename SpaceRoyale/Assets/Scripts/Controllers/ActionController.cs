@@ -140,6 +140,11 @@ public class ActionController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IsOkPos = true;
+        if (collision.tag == "Npc")
+        {
+            IsOkPos = true;
+            StopMove();
+            MoveActions();
+        }
     }
 }
