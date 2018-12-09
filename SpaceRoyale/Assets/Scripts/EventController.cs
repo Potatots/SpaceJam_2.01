@@ -18,17 +18,23 @@ public class EventController : MonoBehaviour {
 
     [Header("Events settings")]
     public int maximumSatifaction;
-    public int minimumSatisfaction;
     public int revolutionSatisfaction;
+    public int minimumSatisfaction;
+    public int delayFrames;
 
     [Header("Debug preview")]
     public int satisfaction;
     [SerializeField]
     EventType eventType;
 
+    private int randomFrame;
+
+
+
     // Use this for initialization
     void Start ()
     {
+        randomFrame = Random.Range(-10, 10);
         satisfaction = Random.Range(revolutionSatisfaction, maximumSatifaction);
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
@@ -39,7 +45,9 @@ public class EventController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        satisfaction -= Random.Range(0, 2);
+        if((Time.frameCount + randomFrame) % delayFrames == 0)
+            satisfaction -= Random.Range(0, 2);
+
         if(eventType == EventType.Revolution)
         {
             UpdateRevolution();
