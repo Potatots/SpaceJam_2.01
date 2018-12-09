@@ -33,12 +33,13 @@ public class ActionController : MonoBehaviour
     public float FireRate;
     private float nextFire;
     private bool IsOkPos = true;
+    private bool FireTriggerExit = false;
 
     void Start()
     {
         NextActions = new List<eAction>(4);
         for (int i = 0; i < 4; i++)
-            NextActions.Add((eAction)Random.Range(1, 7));
+            NextActions.Add((eAction)6);
 
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -98,6 +99,10 @@ public class ActionController : MonoBehaviour
                 StopMove();
                 MoveActions();
             }
+            else
+            {
+                FireTriggerExit = true;
+            }
         }
         else if (NextActions[0] == eAction.Nuke)
         {
@@ -140,11 +145,13 @@ public class ActionController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Npc")
+        IsOkPos = true;
+
+        if (collision.tag == "Npc" && FireTriggerExit)
         {
-            IsOkPos = true;
             StopMove();
             MoveActions();
+            FireTriggerExit = false;
         }
     }
 }
