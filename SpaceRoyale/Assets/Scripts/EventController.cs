@@ -226,7 +226,7 @@ public class EventController : MonoBehaviour {
     void UpdateIndicator()
     {
         float satisfactionRange = maximumSatisfaction - revolutionSatisfaction;
-        float newScaleX = Mathf.Max(0,Mathf.Min(maxIndicatorSize,   (float) (maxIndicatorSize / (satisfactionRange) * satisfaction)   )); 
+        float newScaleX = Mathf.Max(0,Mathf.Min(maxIndicatorSize,   (float) (maxIndicatorSize / (satisfactionRange) * (satisfaction - revolutionSatisfaction)) )); 
         indicatorSprite.gameObject.transform.localScale = new Vector3(newScaleX, 0.25f, 0.5f);
         float newGreen = satisfaction < satisfactionRange / 2 ? (2*satisfaction / satisfactionRange) : 1;
         float newRed = satisfaction > satisfactionRange / 2 ? 2 * (1 - satisfaction / satisfactionRange) : 1;
