@@ -46,7 +46,7 @@ public class EventController : MonoBehaviour {
     void Start ()
     {
         // reputation manager init
-        reputationManager = Camera.main.GetComponent<ReputationManager>();
+        reputationManager = GameObject.FindGameObjectWithTag("UI").GetComponent<ReputationManager>();
 
         // satisfaction init
         randomFrame = Random.Range(-10, 10);
