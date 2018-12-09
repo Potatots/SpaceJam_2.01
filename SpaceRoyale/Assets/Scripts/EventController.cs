@@ -11,6 +11,8 @@ public class EventController : MonoBehaviour {
         Festival
     };
 
+    public ReputationManager reputationManager;
+
     [Header("Prefabs to link")]
     public Sprite[] planetSprites;
     public GameObject revoltBubblePrefab;
@@ -34,6 +36,7 @@ public class EventController : MonoBehaviour {
     public int satisfaction;
     [SerializeField]
     EventType eventType;
+ 
 
     private int randomFrame;
 
@@ -42,6 +45,9 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        // reputation manager init
+        reputationManager = Camera.main.GetComponent<ReputationManager>();
+
         // satisfaction init
         randomFrame = Random.Range(-10, 10);
         satisfaction = Random.Range(revolutionSatisfaction, maximumSatisfaction);
@@ -83,12 +89,18 @@ public class EventController : MonoBehaviour {
 
     private void UpdateRevolution()
     {
+        if ((Time.frameCount + randomFrame) % delayFrames == 0)
+            reputationManager.reputation += (satisfaction - revolutionSatisfaction);
+
         if(satisfaction > revolutionSatisfaction)
             StopEvents();
     }
 
     private void UpdateFestival()
     {
+        if ((Time.frameCount + randomFrame) % delayFrames == 0)
+            reputationManager.reputation += (satisfaction - maximumSatisfaction);
+
         if (satisfaction < maximumSatisfaction)
             StopEvents();
     }
