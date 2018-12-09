@@ -16,12 +16,12 @@ public class soundHandler : MonoBehaviour {
 	void Start () {
         sounds = soundsSer;
 
-        mainSound = new AudioSource();
+        mainSound = gameObject.AddComponent<AudioSource>();
 
- //       mainSound.loop = true;
- //       mainSound.clip = sounds[5];
- //       mainSound.Play();
-        PlaySound(5);
+        mainSound.loop = true;
+        mainSound.clip = sounds[5];
+        mainSound.Play();
+        //PlaySound(5);
 	}
 	
 	// Update is called once per frame
