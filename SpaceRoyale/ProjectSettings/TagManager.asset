@@ -9,6 +9,7 @@ TagManager:
   - Rocket_Heart
   - Rocket_Peace
   - Rocket_Rainbow
+  - UI
   layers:
   - Default
   - TransparentFX
