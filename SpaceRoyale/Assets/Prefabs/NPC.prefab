@@ -138,6 +138,8 @@ MonoBehaviour:
   minimumSatisfaction: -1000
   delayFrames: 10
   maxIndicatorSize: 1.2
+  festivalColor: {r: 0.19339621, g: 1, b: 0.67448646, a: 1}
+  revolutionColor: {r: 1, g: 0.599891, b: 0, a: 1}
   satisfaction: 100
   eventType: 0
 --- !u!198 &198490351356910782
@@ -272,7 +274,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.8999133
+      scalar: 0.9
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -326,7 +328,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.7593926, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -388,8 +390,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.1
+      scalar: 0.5
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -764,7 +766,7 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 20
+    angle: 9
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -794,7 +796,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.77390957
+      value: 1.25
       mode: 0
       spread: 0
       speed:

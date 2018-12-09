@@ -23,9 +23,12 @@ public class EventController : MonoBehaviour {
     public int minimumSatisfaction;
     public int delayFrames;
 
-
     [Header("Indicator settings")]
     public float maxIndicatorSize;
+
+    [Header("Particle settings")]
+    public Color festivalColor;
+    public Color revolutionColor;
 
     [Header("Debug preview")]
     public int satisfaction;
@@ -98,7 +101,7 @@ public class EventController : MonoBehaviour {
             StartRevolution();
         }
 
-        if(revolutionSatisfaction > maximumSatisfaction)
+        if(satisfaction > maximumSatisfaction)
         {
             StartFestival();
         }
@@ -132,7 +135,9 @@ public class EventController : MonoBehaviour {
     void StartRevolution()
     {
         eventType = EventType.Revolution;
-        GetComponent<ParticleSystem>().enableEmission = true;
+        ParticleSystem ps = GetComponent<ParticleSystem>();
+        ps.enableEmission = true;
+        ps.startColor = revolutionColor;
         GameObject bubble = Instantiate(revoltBubblePrefab);
         bubble.transform.parent = transform;
         bubble.transform.localPosition = new Vector3(0, 0, 0);
@@ -140,8 +145,10 @@ public class EventController : MonoBehaviour {
 
     void StartFestival()
     {
-        eventType = EventType.Revolution;
-        GetComponent<ParticleSystem>().enableEmission = true;
+        eventType = EventType.Festival;
+        ParticleSystem ps = GetComponent<ParticleSystem>();
+        ps.enableEmission = true;
+        ps.startColor = festivalColor;
         GameObject bubble = Instantiate(festivalBubblePrefab);
         bubble.transform.parent = transform;
         bubble.transform.localPosition = new Vector3(0, 0, 0);

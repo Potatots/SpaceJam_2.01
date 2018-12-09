@@ -324,18 +324,43 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
         type: 2}
-      propertyPath: satisfaction
-      value: 50
+      propertyPath: festivalColor.r
+      value: 0.19339621
       objectReference: {fileID: 0}
     - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
         type: 2}
-      propertyPath: minimumSatisfaction
-      value: -1000
+      propertyPath: festivalColor.g
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
         type: 2}
-      propertyPath: maximumSatifaction
-      value: 1000
+      propertyPath: festivalColor.b
+      value: 0.67448646
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: revolutionColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: revolutionColor.g
+      value: 0.599891
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: revolutionColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: revolutionColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021694705003760, guid: 19fc24d263999fe45872685a0bbad957,
+        type: 2}
+      propertyPath: festivalColor.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
