@@ -45,8 +45,14 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        Debug.Log("Planeta powstaje");
+
+  
+
         // reputation manager init
         reputationManager = GameObject.FindGameObjectWithTag("UI").GetComponent<ReputationManager>();
+        reputationManager.planetControllers.Add(this);
+        reputationManager.maxReputation += maximumSatisfaction;
 
         // satisfaction init
         randomFrame = Random.Range(-10, 10);
@@ -89,8 +95,10 @@ public class EventController : MonoBehaviour {
 
     private void UpdateRevolution()
     {
+        /*
         if ((Time.frameCount + randomFrame) % delayFrames == 0)
             reputationManager.reputation += (satisfaction - revolutionSatisfaction);
+        */
 
         if(satisfaction > revolutionSatisfaction)
             StopEvents();
@@ -98,8 +106,10 @@ public class EventController : MonoBehaviour {
 
     private void UpdateFestival()
     {
+        /*
         if ((Time.frameCount + randomFrame) % delayFrames == 0)
             reputationManager.reputation += (satisfaction - maximumSatisfaction);
+        */
 
         if (satisfaction < maximumSatisfaction)
             StopEvents();

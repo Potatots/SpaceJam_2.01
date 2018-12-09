@@ -10,6 +10,7 @@ TagManager:
   - Rocket_Peace
   - Rocket_Rainbow
   - UI
+  - Npc
   layers:
   - Default
   - TransparentFX

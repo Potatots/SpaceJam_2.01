@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9804344, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -744,8 +744,10 @@ MonoBehaviour:
   revolutionCount: 0
   festivalCount: 0
   reputation: 500
-  maxReputation: 1000000
-  initialReputation: 500000
+  maxReputation: 0
+  initialReputation: 0
+  planetControllers: []
+  planets: []
 --- !u!114 &114992887811975308
 MonoBehaviour:
   m_ObjectHideFlags: 1
