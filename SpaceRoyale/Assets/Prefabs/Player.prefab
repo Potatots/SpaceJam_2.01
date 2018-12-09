@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63200ff79ac32da438a2182fb8703ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 2
 --- !u!114 &114536243542120508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,8 +175,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rocket: {fileID: 4799673820471956, guid: 26aa0b80544660d4ca99a20d9d84b573, type: 2}
+  Money: {fileID: 4956095596123252, guid: 63a0cb4d1560c8b4ab8932ecfdb55053, type: 2}
+  Peace: {fileID: 4200255883838280, guid: a1f349be156c8cb4493a0055333ec587, type: 2}
+  Heart: {fileID: 4379396839354324, guid: 93ccc37be665f2242a1ce505fa79f208, type: 2}
+  Rainbow: {fileID: 4572502821511000, guid: 7936f1fecc3e0fd4689166e45945c1f7, type: 2}
   Radar: {fileID: 4148360446698006}
-  Speed: 0
+  Speed: 20
 --- !u!212 &212343388088329620
 SpriteRenderer:
   m_ObjectHideFlags: 1
