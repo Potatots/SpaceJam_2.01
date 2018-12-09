@@ -25,10 +25,13 @@ public class ActionController : MonoBehaviour
     public Transform Rainbow;
     public Transform Radar;
     public Transform Nuke;
+    public Spawner Spawner;
 
     private Rigidbody2D _rigidbody;
 
     public int Speed;
+    public int ChanceForEnemy;
+    public int ChanceForTradeShip;
 
     public float FireRate;
     private float nextFire;
@@ -113,6 +116,14 @@ public class ActionController : MonoBehaviour
         {
             Debug.Log("Coś kurwa poszło nie tak, eAction.Empty");
         }
+
+        int enemyNumber = Random.Range(0, 100);
+        int tradeNumber = Random.Range(0, 100);
+
+        if (enemyNumber < ChanceForEnemy)
+            Spawner.SpawnEnemy();
+        if (tradeNumber < ChanceForTradeShip)
+            Spawner.SpawnTradeShips();
     }
 
     public void StartMove(Quaternion qtMove)

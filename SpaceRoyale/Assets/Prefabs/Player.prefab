@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 50083943110172330}
   - component: {fileID: 114536243542120508}
   - component: {fileID: 58490823545535268}
+  - component: {fileID: 58384482299734656}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -152,6 +153,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &58384482299734656
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202360994457744}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.09469271}
+  serializedVersion: 2
+  m_Radius: 2.6542802
 --- !u!58 &58490823545535268
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -198,7 +214,10 @@ MonoBehaviour:
   Rainbow: {fileID: 4572502821511000, guid: 7936f1fecc3e0fd4689166e45945c1f7, type: 2}
   Radar: {fileID: 4148360446698006}
   Nuke: {fileID: 4777425870816976, guid: 0f374ee295d9d8a48b9a815a80e32457, type: 2}
+  Spawner: {fileID: 114221223849848130, guid: c3d81105c51344e49928f4e35a9f9c45, type: 2}
   Speed: 35
+  ChanceForEnemy: 5
+  ChanceForTradeShip: 5
   FireRate: 0.2
 --- !u!212 &212343388088329620
 SpriteRenderer:

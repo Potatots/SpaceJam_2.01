@@ -6,7 +6,6 @@ public class Spawner : MonoBehaviour
 {
     public int NumberOfNpcs;
     public int MinimumDistance;
-    int PermaDist;
     public int VerticalOffset;
     public int HorizontalOffset;
     public GameObject[] ListOfNpcs;
@@ -14,17 +13,17 @@ public class Spawner : MonoBehaviour
     public GameObject TradeShip;
     public List<Vector3> SpawnedNpcsVectors;
     public ReputationManager rp;
+    public int ChanceForEnemy;
+    public int ChanceForTradeShip;
 
     void Start()
     {
-        PermaDist = MinimumDistance;
         SpawnNpcs(NumberOfNpcs);
         SpawnedNpcsVectors = new List<Vector3>();
         SpawnedNpcsVectors.Add(Vector3.zero);
 
         SpawnEnemy();
         SpawnTradeShips();
-
     }
 
     private void Update()
@@ -33,11 +32,23 @@ public class Spawner : MonoBehaviour
         {
             SpawnNpcs(1);
             rp.maxReputation = (int)(rp.maxReputation * 1.25f);
+            SpawnTradeShips();
+            SpawnEnemy();
         }
         else if(rp.reputation <=0)
         {
             SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
+    }
+    private void FixedUpdate()
+    {
+        int enemyNumber = Random.Range(0, 10000);
+        int tradeNumber = Random.Range(0, 10000);
+
+        if (enemyNumber < ChanceForEnemy)
+            SpawnEnemy();
+        if (tradeNumber < ChanceForTradeShip)
+            SpawnTradeShips();
     }
 
     public void SpawnNpcs(int number)
@@ -60,8 +71,6 @@ public class Spawner : MonoBehaviour
             SpawnedNpcsVectors.Add(newVector);
 
             Instantiate(obj, newVector, Quaternion.identity);
-            MinimumDistance = PermaDist;
-
         }
     }
 
