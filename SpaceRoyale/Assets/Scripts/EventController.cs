@@ -124,8 +124,10 @@ public class EventController : MonoBehaviour {
     {
         if(other.CompareTag("Rocket"))
         {
+            satisfaction = Random.Range( (maximumSatisfaction - revolutionSatisfaction) / 3, (maximumSatisfaction - revolutionSatisfaction) / 2) ;
             //Debug.Log("Zderzenie z rakietą");
-            if(eventType == EventType.Revolution)
+            /*
+            if (eventType == EventType.Revolution)
             {
                 satisfaction += (maximumSatisfaction - revolutionSatisfaction) / 2;
             }
@@ -133,6 +135,7 @@ public class EventController : MonoBehaviour {
             {
                 satisfaction -= (maximumSatisfaction - revolutionSatisfaction) / 3;
             }
+            */
         }
         else if (other.CompareTag("Rocket_Cash"))
         {
