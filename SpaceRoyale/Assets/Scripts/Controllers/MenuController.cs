@@ -52,7 +52,7 @@ public class MenuController : MonoBehaviour
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(waitTime);
-        Debug.Log("ok");
+       // Debug.Log("ok");
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 }
