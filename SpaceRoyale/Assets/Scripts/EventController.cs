@@ -15,12 +15,17 @@ public class EventController : MonoBehaviour {
     public Sprite[] planetSprites;
     public GameObject revoltBubblePrefab;
     public GameObject festivalBubblePrefab;
+    public SpriteRenderer indicatorSprite;
 
     [Header("Events settings")]
-    public int maximumSatifaction;
+    public int maximumSatisfaction;
     public int revolutionSatisfaction;
     public int minimumSatisfaction;
     public int delayFrames;
+
+
+    [Header("Indicator settings")]
+    public float maxIndicatorSize;
 
     [Header("Debug preview")]
     public int satisfaction;
@@ -34,12 +39,19 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        // satisfaction init
         randomFrame = Random.Range(-10, 10);
-        satisfaction = Random.Range(revolutionSatisfaction, maximumSatifaction);
+        satisfaction = Random.Range(revolutionSatisfaction, maximumSatisfaction);
 
+        // sprite renderer
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = planetSprites[Random.Range(0, planetSprites.Length)];
-        StartRevolution();
+
+        // indicatior setup
+        indicatorSprite.transform.localPosition = new Vector3(-maxIndicatorSize / 2, 0, 0);
+
+        // start with no event
+        StopEvents();
     }
 	
 	// Update is called once per frame
@@ -47,6 +59,8 @@ public class EventController : MonoBehaviour {
     {
         if((Time.frameCount + randomFrame) % delayFrames == 0)
             satisfaction -= Random.Range(0, 2);
+
+        UpdateIndicator();
 
         if(eventType == EventType.Revolution)
         {
@@ -60,16 +74,20 @@ public class EventController : MonoBehaviour {
         {
             UpdateNone();
         }
+
+
     }
 
     private void UpdateRevolution()
     {
-        ;
+        if(satisfaction > revolutionSatisfaction)
+            StopEvents();
     }
 
     private void UpdateFestival()
     {
-        ;
+        if (satisfaction < maximumSatisfaction)
+            StopEvents();
     }
 
     void UpdateNone()
@@ -80,10 +98,11 @@ public class EventController : MonoBehaviour {
             StartRevolution();
         }
 
-        if(revolutionSatisfaction > maximumSatifaction)
+        if(revolutionSatisfaction > maximumSatisfaction)
         {
             StartFestival();
         }
+
         /*
         if ((Time.frameCount + randomFrame) % delayFrames == 0)
         {
@@ -133,6 +152,26 @@ public class EventController : MonoBehaviour {
         eventType = EventType.None;
         GetComponent<ParticleSystem>().enableEmission = false;
     }
+
+
+
+
+
+
+
+
+
+    void UpdateIndicator()
+    {
+        float satisfactionRange = maximumSatisfaction - revolutionSatisfaction;
+        float newScaleX = Mathf.Max(0,Mathf.Min(maxIndicatorSize,   (float) (maxIndicatorSize / (satisfactionRange) * satisfaction)   )); 
+        indicatorSprite.gameObject.transform.localScale = new Vector3(newScaleX, 0.25f, 0.5f);
+        float newGreen = satisfaction < satisfactionRange / 2 ? (2*satisfaction / satisfactionRange) : 1;
+        float newRed = satisfaction > satisfactionRange / 2 ? 2 * (1 - satisfaction / satisfactionRange) : 1;
+        indicatorSprite.color = new Color(newRed, newGreen, 0);
+
+    }
+
 
 
 }
