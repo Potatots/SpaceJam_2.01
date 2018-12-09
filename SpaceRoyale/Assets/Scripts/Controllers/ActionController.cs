@@ -28,6 +28,9 @@ public class ActionController : MonoBehaviour
 
     public int Speed;
 
+    public float FireRate;
+    private float nextFire;
+
     void Start()
     {
         NextActions = new List<eAction>(4);
@@ -39,9 +42,17 @@ public class ActionController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (NextActions[0] == eAction.StopMove && Input.GetKeyDown(KeyCode.Space))
         {
             Action();
+        }
+        else if (NextActions[0] != eAction.StopMove && Input.GetKeyDown(KeyCode.Space))
+        {
+            if(Time.time > nextFire)
+            {
+                nextFire = Time.time + FireRate;
+                Action();
+            }
         }
     }
 
@@ -103,7 +114,7 @@ public class ActionController : MonoBehaviour
     {
         NextActions.RemoveAt(0);
 
-        if (Random.Range(0, 10) < 2)
+        if (Random.Range(0, 100) < 15)
             NextActions.Add((eAction)1);
         else
             NextActions.Add((eAction)Random.Range(1, 7));

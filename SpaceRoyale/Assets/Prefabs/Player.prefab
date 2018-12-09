@@ -82,13 +82,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760011391490824}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.67559016, w: 0.7372774}
   m_LocalPosition: {x: 0, y: 0, z: 0.96}
   m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_Children: []
   m_Father: {fileID: 4148360446698006}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -85}
 --- !u!4 &4148360446698006
 Transform:
   m_ObjectHideFlags: 1
@@ -123,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202360994457744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4168963691146376}
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &114345736740684510
 MonoBehaviour:
@@ -174,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4e1a43526b0f840beec4ef65a91c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextActions: 
   Rocket: {fileID: 4799673820471956, guid: 26aa0b80544660d4ca99a20d9d84b573, type: 2}
   Money: {fileID: 4956095596123252, guid: 63a0cb4d1560c8b4ab8932ecfdb55053, type: 2}
   Peace: {fileID: 4200255883838280, guid: a1f349be156c8cb4493a0055333ec587, type: 2}
@@ -181,6 +182,7 @@ MonoBehaviour:
   Rainbow: {fileID: 4572502821511000, guid: 7936f1fecc3e0fd4689166e45945c1f7, type: 2}
   Radar: {fileID: 4148360446698006}
   Speed: 20
+  FireRate: 1
 --- !u!212 &212343388088329620
 SpriteRenderer:
   m_ObjectHideFlags: 1
