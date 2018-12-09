@@ -38,7 +38,7 @@ public class ActionController : MonoBehaviour
     {
         NextActions = new List<eAction>(4);
         for (int i = 0; i < 4; i++)
-            NextActions.Add((eAction)6);
+            NextActions.Add((eAction)Random.Range(1, 7));
 
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -132,29 +132,14 @@ public class ActionController : MonoBehaviour
         else
             NextActions.Add((eAction)Random.Range(1, 7));
     }
-    private bool IsCorrectPosition()
-    {
-        List<GameObject> AllNpcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Npc"));
-
-        foreach (GameObject npc in AllNpcs)
-        {
-            Debug.Log(Vector3.Distance(npc.transform.position, transform.position));
-            if (Vector3.Distance(npc.transform.position, transform.position) < 490.008)
-                return false;
-        }
-        return true;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Dupa wejście");
-
         if (collision.tag == "Npc")
             IsOkPos = false;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Dupa wyjście");
         IsOkPos = true;
     }
 }
