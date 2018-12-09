@@ -445,8 +445,50 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &608199242
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -380.87247
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 204.07733
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563388122375454, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!114 &637239702 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114221223849848130, guid: c3d81105c51344e49928f4e35a9f9c45,
