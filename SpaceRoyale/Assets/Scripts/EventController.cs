@@ -13,8 +13,8 @@ public class EventController : MonoBehaviour {
 
     [Header("Prefabs to link")]
     public Sprite[] planetSprites;
-    public GameObject rocketPrefab;
     public GameObject revoltBubblePrefab;
+    public GameObject festivalBubblePrefab;
 
     [Header("Events settings")]
     public int maximumSatifaction;
@@ -80,6 +80,10 @@ public class EventController : MonoBehaviour {
             StartRevolution();
         }
 
+        if(revolutionSatisfaction > maximumSatifaction)
+        {
+            StartFestival();
+        }
         /*
         if ((Time.frameCount + randomFrame) % delayFrames == 0)
         {
@@ -111,6 +115,15 @@ public class EventController : MonoBehaviour {
         eventType = EventType.Revolution;
         GetComponent<ParticleSystem>().enableEmission = true;
         GameObject bubble = Instantiate(revoltBubblePrefab);
+        bubble.transform.parent = transform;
+        bubble.transform.localPosition = new Vector3(0, 0, 0);
+    }
+
+    void StartFestival()
+    {
+        eventType = EventType.Revolution;
+        GetComponent<ParticleSystem>().enableEmission = true;
+        GameObject bubble = Instantiate(festivalBubblePrefab);
         bubble.transform.parent = transform;
         bubble.transform.localPosition = new Vector3(0, 0, 0);
     }
