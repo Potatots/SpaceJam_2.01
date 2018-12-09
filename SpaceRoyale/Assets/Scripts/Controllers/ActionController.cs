@@ -58,7 +58,6 @@ public class ActionController : MonoBehaviour
 
     void Action()
     {
-        Debug.Log(NextActions[0].ToString());
         if (NextActions[0] == eAction.Shoot)
         {
             Instantiate(Rocket, transform.position, Radar.rotation);
