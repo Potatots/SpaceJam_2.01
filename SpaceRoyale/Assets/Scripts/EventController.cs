@@ -51,7 +51,7 @@ public class EventController : MonoBehaviour {
         sr.sprite = planetSprites[Random.Range(0, planetSprites.Length)];
 
         // indicatior setup
-        indicatorSprite.transform.localPosition = new Vector3(-maxIndicatorSize / 2, 0, 0);
+        indicatorSprite.transform.localPosition = new Vector3(-maxIndicatorSize / 2, indicatorSprite.transform.localPosition.y, 0);
 
         // start with no event
         StopEvents();
