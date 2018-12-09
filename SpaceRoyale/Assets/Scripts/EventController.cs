@@ -216,11 +216,6 @@ public class EventController : MonoBehaviour {
 
 
 
-
-
-
-
-
     void UpdateIndicator()
     {
         float satisfactionRange = maximumSatisfaction - revolutionSatisfaction;

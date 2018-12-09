@@ -629,7 +629,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0.392
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!114 &114484367059334152
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3962264, g: 0.25231397, b: 0.25231397, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -724,7 +724,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cca942d5fdaacbb4a8f0cd46f6b9d258, type: 3}
-  m_Type: 3
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
@@ -1001,6 +1001,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 48d7c267bd886e24cb9c0167a3a1e5e9, type: 3}
   - {fileID: 21300000, guid: dcc2b35e6edb046418c98139853045f9, type: 3}
   - {fileID: 21300000, guid: dcc2b35e6edb046418c98139853045f9, type: 3}
+  - {fileID: 21300000, guid: 8f429b86a0070eb47b5efb37506eaf82, type: 3}
   nextActions:
   - {fileID: 114094421654619084}
   - {fileID: 114645045405531668}

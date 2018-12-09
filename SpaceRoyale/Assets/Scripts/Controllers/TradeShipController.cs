@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class TradeShipController : MonoBehaviour
 {
     List<GameObject> AllNpcs;
     Transform SelectedNpc;
@@ -15,9 +15,9 @@ public class EnemyController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        AllNpcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Npc").OrderByDescending(go => go.GetComponent<EventController>().satisfaction));
+        AllNpcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Npc"));
 
-        SelectedNpc = AllNpcs[0].transform;
+        SelectedNpc = AllNpcs[Random.Range(0, AllNpcs.Count - 1)].transform;
     }
 
     // Update is called once per frame
@@ -43,19 +43,14 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(WaitTime);
 
-        AllNpcs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Npc").OrderByDescending(go => go.GetComponent<EventController>().satisfaction));
+        Transform newNpc;
 
-        if (SelectedNpc.position == AllNpcs[0].transform.position)
-            SelectedNpc = AllNpcs[1].transform;
-        else
-            SelectedNpc = AllNpcs[0].transform;
+        do
+        {
+            newNpc = AllNpcs[Random.Range(0, AllNpcs.Count - 1)].transform;
+
+        } while (SelectedNpc.position == newNpc.position);
+
+        SelectedNpc = newNpc;
     }
-
-
-    public void DestroyWithFade()
-    {
-
-    }
-
-
 }
