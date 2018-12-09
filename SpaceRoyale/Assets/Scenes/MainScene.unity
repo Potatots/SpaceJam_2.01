@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df0d9f9a9b4540860d7b58b5a7a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfObjects: 2
+  NumberOfObjects: 3
   ListOfObjects:
   - {fileID: 1103666527321902, guid: 19fc24d263999fe45872685a0bbad957, type: 2}
   SpawnedVectors: []
@@ -331,7 +331,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ea5c00f7667d04ba036744bef94533, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1855029999
+--- !u!1001 &906911250
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -427,21 +427,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224418345651775090, guid: a1b49bfd640404b45b95fb84e6700075,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -340
-      objectReference: {fileID: 0}
-    - target: {fileID: 224418345651775090, guid: a1b49bfd640404b45b95fb84e6700075,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.00021519
-      objectReference: {fileID: 0}
-    - target: {fileID: 224327759028549784, guid: a1b49bfd640404b45b95fb84e6700075,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 339.99994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1b49bfd640404b45b95fb84e6700075, type: 2}
