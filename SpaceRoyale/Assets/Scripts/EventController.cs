@@ -49,7 +49,9 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-
+        // size changing
+        float scaleModifier = Random.Range(minScale, maxScale);
+        transform.localScale = scaleModifier * new Vector3(1, 1, 1);
 
         // reputation manager init
         reputationManager = GameObject.FindGameObjectWithTag("UI").GetComponent<ReputationManager>();
