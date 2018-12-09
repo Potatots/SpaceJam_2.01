@@ -31,7 +31,7 @@ public class ActionController : MonoBehaviour
     void Start()
     {
         NextActions = new List<eAction>(4);
-        for(int i=0;i<4;i++)
+        for (int i = 0; i < 4; i++)
             NextActions.Add((eAction)Random.Range(1, 7));
 
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -102,6 +102,10 @@ public class ActionController : MonoBehaviour
     private void MoveActions()
     {
         NextActions.RemoveAt(0);
-        NextActions.Add((eAction)Random.Range(1, 7));
+
+        if (Random.Range(0, 10) < 2)
+            NextActions.Add((eAction)1);
+        else
+            NextActions.Add((eAction)Random.Range(1, 7));
     }
 }
