@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public enum eAction
 {
@@ -14,8 +15,7 @@ public enum eAction
 
 public class ActionController : MonoBehaviour
 {
-    public eAction CurrentAction { get; set; }
-    public eAction NextAction { get; set; }
+    public List<eAction> NextActions;
 
     public Transform Rocket;
     public Transform Money;
@@ -30,14 +30,16 @@ public class ActionController : MonoBehaviour
 
     void Start()
     {
-        CurrentAction = (eAction)Random.Range(1, 7);
-        NextAction = (eAction)Random.Range(1, 7);
+        NextActions = new List<eAction>(4);
+        for(int i=0;i<4;i++)
+            NextActions.Add((eAction)Random.Range(1, 7));
+
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Action();
         }
@@ -45,50 +47,44 @@ public class ActionController : MonoBehaviour
 
     void Action()
     {
-        if(CurrentAction == eAction.Shoot)
+        Debug.Log(NextActions[0].ToString());
+        if (NextActions[0] == eAction.Shoot)
         {
             Instantiate(Rocket, transform.position, Radar.rotation);
-            CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 7);
+            MoveActions();
         }
-        else if(CurrentAction == eAction.Heart)
+        else if (NextActions[0] == eAction.Heart)
         {
             Instantiate(Heart, transform.position, Radar.rotation);
-            CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 7);
+            MoveActions();
         }
-        else if(CurrentAction == eAction.Money)
+        else if (NextActions[0] == eAction.Money)
         {
             Instantiate(Money, transform.position, Radar.rotation);
-            CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 7);
+            MoveActions();
         }
-        else if(CurrentAction == eAction.Peace)
+        else if (NextActions[0] == eAction.Peace)
         {
             Instantiate(Peace, transform.position, Radar.rotation);
-            CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 7);
+            MoveActions();
         }
-        else if(CurrentAction == eAction.Rainbow)
+        else if (NextActions[0] == eAction.Rainbow)
         {
             Instantiate(Rainbow, transform.position, Radar.rotation);
-            CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 7);
+            MoveActions();
         }
-        else if(CurrentAction == eAction.StartMove)
+        else if (NextActions[0] == eAction.StartMove)
         {
             StartMove(Radar.rotation);
-            CurrentAction = eAction.StopMove;
+            NextActions[0] = eAction.StopMove;
         }
-        else if(CurrentAction == eAction.StopMove)
+        else if (NextActions[0] == eAction.StopMove)
         {
             StopMove();
-            CurrentAction = eAction.StartMove;
-
-            CurrentAction = NextAction;
-            NextAction = (eAction)Random.Range(1, 7);
+            NextActions[0] = eAction.StartMove;
+            MoveActions();
         }
-        else if(CurrentAction == eAction.Empty)
+        else if (NextActions[0] == eAction.Empty)
         {
             Debug.Log("Coś kurwa poszło nie tak, eAction.Empty");
         }
@@ -101,5 +97,11 @@ public class ActionController : MonoBehaviour
     public void StopMove()
     {
         _rigidbody.velocity = Vector3.zero;
+    }
+
+    private void MoveActions()
+    {
+        NextActions.RemoveAt(0);
+        NextActions.Add((eAction)Random.Range(1, 7));
     }
 }

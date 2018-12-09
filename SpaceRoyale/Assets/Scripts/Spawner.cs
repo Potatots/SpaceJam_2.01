@@ -28,9 +28,6 @@ public class Spawner : MonoBehaviour
                 newVector = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(ScreenOffset, Screen.width - ScreenOffset), Random.Range(ScreenOffset, Screen.height - ScreenOffset), Camera.main.farClipPlane / 2));
             } while (!IsFarEnough(newVector));
 
-            Debug.Log(Screen.width);
-            Debug.Log(Screen.height);
-
             SpawnedVectors.Add(newVector);
 
             Instantiate(obj, newVector, Quaternion.identity);
