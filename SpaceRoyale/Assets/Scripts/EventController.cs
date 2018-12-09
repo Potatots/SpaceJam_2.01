@@ -11,6 +11,8 @@ public class EventController : MonoBehaviour {
         Festival
     };
 
+
+
     public Sprite[] planetSprites;
 
     public GameObject rocketPrefab;
@@ -21,6 +23,7 @@ public class EventController : MonoBehaviour {
 
     [SerializeField]
     int delayFrames;
+    int randomFrame;
 
     [SerializeField]
     [Range(0,1)]
@@ -31,6 +34,7 @@ public class EventController : MonoBehaviour {
     // Use this for initialization
 	void Start ()
     {
+        randomFrame = Random.Range(-20, 20);
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = planetSprites[Random.Range(0, planetSprites.Length)];
         StartRevolution();
@@ -52,7 +56,7 @@ public class EventController : MonoBehaviour {
 
     void UpdateNone()
     {
-        if (Time.frameCount % delayFrames == 0)
+        if ((Time.frameCount + randomFrame) % delayFrames == 0)
         {
             float ran = Random.Range(0f, 1f);
             if (ran < revolutionProbability)
