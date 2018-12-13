@@ -22,6 +22,8 @@ public class ReputationManager : MonoBehaviour
     [Header("Reputation settings")]
     public int maxReputation;
     public int initialReputation;
+    public int notority;
+
 
     public List<EventController> planetControllers;
     public GameObject[] planets;
@@ -36,6 +38,7 @@ public class ReputationManager : MonoBehaviour
     }
     void Start()
     {
+        notority = 0;
         /*
         //maxReputation = 0;
         GameObject[]planets = GameObject.FindGameObjectsWithTag("Npc");
@@ -55,7 +58,7 @@ public class ReputationManager : MonoBehaviour
     {
         int revolutionsAmount = 0;
         int festivalsAmount = 0;
-        reputation = 0;
+        reputation = notority;
         foreach(EventController controller in planetControllers)
         {
             reputation += controller.satisfaction;

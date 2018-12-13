@@ -28,7 +28,13 @@ public class RocketReaction : MonoBehaviour
             Destroy(other.gameObject);
 
             if (other.CompareTag("Rocket"))
+            {
+                if (gameObject.transform.parent.gameObject.tag == "TradeShip")
+                {
+                    staticElement.ModifyRep(-300);
+                }
                 Destroy(gameObject.transform.parent.gameObject);
+           }
         }
     }
 
